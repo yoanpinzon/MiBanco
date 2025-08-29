@@ -15,12 +15,13 @@ void menu() {
     cout << "2. Listar clientes" << endl;
     cout << "3. Consignar" << endl;
     cout << "4. Retirar" << endl;
+    cout << "5. Totales" << endl;
     cout << "0. Salir" << endl;
     return;
 }
 
 int main() {
-    int opc, n = 0;
+    int opc, n = 0, suma;
     Cliente banco[ 100 ];
     do {
         string nom;
@@ -55,6 +56,13 @@ int main() {
                     banco[ i ].saldo -= monto;
                 }
             }
+            break;
+        case 5:
+            suma = 0;
+            for ( int i = 0; i < n; i++ ) {
+                suma += banco[ i ].saldo;
+            }
+            cout << "El total de los saldos es: " << suma << endl;
             break;
         }
     } while ( opc != 0 );

@@ -46,6 +46,16 @@ int main() {
                     banco[ i ].saldo += monto;
                 }
             }
+            break;
+        case 4:
+            cout << "Nombre= "; cin >> nom;
+            for ( int i = 0; i < n; i++ ) {
+                if ( banco[i ].nom == nom ) {
+                    cout << "Monto a retirar="; cin >> monto;
+                    banco[ i ].saldo -= monto;
+                }
+            }
+            break;
         }
     } while ( opc != 0 );
 

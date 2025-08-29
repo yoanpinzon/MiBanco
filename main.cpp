@@ -13,6 +13,8 @@ void menu() {
     cout << "MENU MI BANCO" << endl;
     cout << "1. Agregar cliente" << endl;
     cout << "2. Listar clientes" << endl;
+    cout << "3. Consignar" << endl;
+    cout << "4. Retirar" << endl;
     cout << "0. Salir" << endl;
     return;
 }
@@ -21,6 +23,8 @@ int main() {
     int opc, n = 0;
     Cliente banco[ 100 ];
     do {
+        string nom;
+        int monto;
         menu();
         cout << "opcion: "; cin >> opc;
         switch( opc ) {
@@ -34,6 +38,14 @@ int main() {
                 cout << banco[ i ].nom << " " << banco[ i ].saldo << endl;
             }
             break;
+        case 3:
+            cout << "Nombre= "; cin >> nom;
+            for ( int i = 0; i < n; i++ ) {
+                if ( banco[i ].nom == nom ) {
+                    cout << "Monto a consignar="; cin >> monto;
+                    banco[ i ].saldo += monto;
+                }
+            }
         }
     } while ( opc != 0 );
 
